@@ -1,0 +1,12 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "Lista de Afazeres",
+  "main": "../script/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrei Alves",
+  "license": "ISC",
+  "type": "module"
+}

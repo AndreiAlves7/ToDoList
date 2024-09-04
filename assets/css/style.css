@@ -1,0 +1,11 @@
+.btn i {
+    pointer-events: none;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.hide {
+    display: none;
+}
