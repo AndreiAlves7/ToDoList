@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <script type="module" src="script/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script/script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=SUSE:wght@100..800&display=swap');
+    </style>
     <title>To Do List</title>
 </head>
+
 <body>
     <main class="container">
-        <h1 class="titulo">To Do Avançado</h1>
+        <h1 class="titulo">Lista de Afazeres</h1>
         <form id="add-task" class="">
-            <div>
+            <div class="form_div">
                 <label for="task">Adicione sua tarefa</label>
-                <input type="text" name="task" id="task" required placeholder="O que você vai fazer?">
-                <button type="submit" class="btn add-task_btn">+</button>                
-            </div>   
+                <input type="text" name="task" id="task" class="form_input" required placeholder="O que você vai fazer?">
+                <button type="submit" class="btn add-task_btn">+</button>
+            </div>
         </form>
-        
-        <form id="edit-task" class="hide"> 
-            <div>
+
+        <form id="edit-task" class="hide">
+            <div class="form_div">
                 <label for="task">Edite sua tarefa</label>
-                <input type="text" name="task" id="edited-task">
+                <input type="text" name="task" id="edited-task" class="form_input">
                 <button type="submit" class="btn btn-edit_confirm">
                     <i class="fa-solid fa-check-double"></i>
                 </button>
-            </div> 
-            <button class="btn cancel-edit_btn" type="button">Cancelar</button>       
-        </form> 
+            </div>
+            <button class="btn cancel-edit_btn" type="button">Cancelar</button>
+        </form>
 
         <session class="toolbar">
-            <form>
+            <form class="search_form">
                 <label for="search">Pesquisar</label>
-                <input type="text" name="search" id="search" placeholder="Buscar...">
+                <input type="text" name="search" id="search" class="form_input" placeholder="Buscar...">
                 <button class="btn" id="btn-backDel">
                     <i class="fa-solid fa-delete-left"></i>
                 </button>
             </form>
-            
+
             <div class="filter">
                 <h4>Filtrar</h4>
                 <select id="filter-select">
@@ -51,11 +53,13 @@
                     <option value="done">Feitos</option>
                     <option value="todo">A fazer</option>
                 </select>
+            </div>
         </session>
 
-        <session todo-list>
+        <session class="todo-list">
             
         </session>
     </main>
 </body>
+
 </html>

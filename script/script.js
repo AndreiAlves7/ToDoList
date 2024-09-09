@@ -5,27 +5,28 @@ if (itemsArray.length > 0) {
     loadTask()
 }
 
-console.log(itemsArray)
-
 function loadTask() {
 
     for (let i = 0; i < itemsArray.length; i++) {
 
         const list = document.createElement('ul')
-        const toDoList = document.querySelector('[todo-list]')
-        list.classList.add("list-todo")
+        const toDoList = document.querySelector('.todo-list')
+        list.classList.add("todo-list_ul")
 
         const content = `
         <li class="list-item" >${itemsArray[i]}
-            <button class="btn done-btn">
+
+        <div class="div-btn_task">
+            <button class="btn_task done-btn">
                 <i class="fa-solid fa-check"></i>
             </button>
-            <button class="btn edit-btn">
+            <button class="btn_task edit-btn">
                 <i class="fa-solid fa-pen"></i>
             </button>
-            <button class="btn delete-btn">
+            <button class="btn_task delete-btn">
                 <i class="fa-solid fa-xmark"></i>
             </button>
+        </div>
         </li>
         `
         list.innerHTML = content
@@ -42,11 +43,9 @@ function addTask(task) {
 }
 
 function editTask(list, oldTask) {
-    console.log('foi')
     toggleForm()
     const taskValue = document.getElementById('edited-task')
     taskValue.value = oldTask
-
 
     const btnEdit = document.querySelector('.btn-edit_confirm')
     btnEdit.addEventListener('click', (event) => {
@@ -70,7 +69,7 @@ deleteBtn.forEach((db, i) => {
     db.addEventListener('click', () => {
         itemsArray.splice(i, 1)
         localStorage.setItem('Tarefa', JSON.stringify(itemsArray))
-        const item = document.querySelector('.list-todo')
+        const item = document.querySelector('.todo-list_ul')
         item.parentNode.removeChild(item)
         location.reload()
     })
@@ -101,7 +100,7 @@ function backDel() {
 
 function filterOp() {
     const filterSelect = document.getElementById('filter-select')
-    const items = document.querySelectorAll('.list-todo')
+    const items = document.querySelectorAll('.todo-list_ul')
     items.forEach((item) => {
         const iClass = item.classList
         switch (filterSelect.value) {
@@ -134,7 +133,7 @@ function filterOp() {
 function toggleForm() {
     const addTask = document.querySelector('#add-task')
     const editTask = document.querySelector('#edit-task')
-    const toDoList = document.querySelector('[todo-list]')
+    const toDoList = document.querySelector('.todo-list')
     addTask.classList.toggle('hide')
     editTask.classList.toggle('hide')
     toDoList.classList.toggle('hide')
