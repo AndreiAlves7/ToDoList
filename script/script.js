@@ -8,13 +8,13 @@ if (itemsArray.length > 0) {
 function loadTask() {
 
     for (let i = 0; i < itemsArray.length; i++) {
-
+        const itemTask = itemsArray[i].charAt(0).toUpperCase() + itemsArray[i].slice(1)
         const list = document.createElement('ul')
         const toDoList = document.querySelector('.todo-list')
         list.classList.add("todo-list_ul")
 
         const content = `
-        <li class="list-item" >${itemsArray[i]}
+        <li class="list-item" > <span class="text_task"> ${itemTask} </span>
 
         <div class="div-btn_task">
             <button class="btn_task done-btn">
@@ -137,6 +137,10 @@ function toggleForm() {
     addTask.classList.toggle('hide')
     editTask.classList.toggle('hide')
     toDoList.classList.toggle('hide')
+}
+
+function capitalize(text) {
+   return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
 form.addEventListener('submit', (event) => {
